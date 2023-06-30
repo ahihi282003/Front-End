@@ -1,0 +1,149 @@
+<section class="header">
+  <div class="container bg-light">
+    <div class="row">
+      <div class="col-md-3">
+        <img
+          src="/assets/logo.webp"
+          class="w-75 d-flex justify-content-center ms-3 mt-3"
+          alt=""
+        />
+      </div>
+      <div class="col-md-9 p-0">
+        <div class="row mt-3">
+          <nav
+            class="col-md-10 navbar navbar-expand-lg navbar-light mt-2 bg-light"
+          >
+            <div class="container-fluid">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#home">
+                      <strong>Trang chủ</strong>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active ps-4"
+                      aria-current="page"
+                      href="#gioi-thieu"
+                    >
+                      <strong>Giới thiệu</strong>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active ps-4"
+                      aria-current="page"
+                      href="#san-pham"
+                    >
+                      <strong>Sản Phẩm</strong>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active ps-4"
+                      aria-current="page"
+                      href="#phan-hoi"
+                    >
+                      <strong>Góp ý</strong>
+                    </a>
+                  </li>
+                  <div ng-show="user != null">
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active ps-4"
+                        aria-current="page"
+                        href="#gio-hang"
+                      >
+                        <strong>Giỏ Hàng({{index}})</strong>
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="col-md-2">
+            <div class="dropdown d-flex justify-content-center me-5">
+              <button
+                class="btn dropdown-toggle fw-bold mt-3"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="font-size: 18px"
+              >
+                <img
+                  src="/assets/icon_gh.png"
+                  alt=""
+                  style="width: 30px; height: 30px"
+                />
+                {{user.fullname}}
+              </button>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <div ng-show="user == null">
+                  <li>
+                    <a class="dropdown-item" href="#dang-nhap">Đăng nhập</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#dang-ky">Đăng ký</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#quen-mat-khau"
+                      >Quên mật khẩu</a
+                    >
+                  </li>
+                </div>
+                <div ng-show="user != null ">
+                  <li>
+                    <a class="dropdown-item" href="#home" ng-click="logOut()"
+                      >Đăng xuất</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#doi-mat-khau"
+                      >Đổi mật khẩu</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#doi-thong-tin"
+                      >Đổi thông tin</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#history"
+                      >Lịch sử mua hàng</a
+                    >
+                  </li>
+                  <div ng-show="user.role!=true">
+                    <li>
+                      <a class="dropdown-item" href="#quan-ly-san-pham"
+                        >Quản lý sản phẩm</a
+                      >
+                    </li>
+
+                    <li>
+                      <a class="dropdown-item" href="#quan-ly-the-loai"
+                        >Quản lý thể loại</a
+                      >
+                    </li>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

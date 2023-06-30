@@ -1,0 +1,45 @@
+<section>
+  <div class="qlsp">
+    <h1>Quản lý sản phẩm</h1>
+    <p>ID:</p>
+    <input type="text" ng-model="form_DH.id" />
+    <p>Name:</p>
+    <input type="text" ng-model="form_DH.name" />
+    <p>Mã sản phẩm:</p>
+    <input type="text" ng-model="form_DH.ma" />
+    <p>Giá sản phẩm</p>
+    <input type="text" ng-model="form_DH.price" />
+    <p>Hãng sản xuất</p>
+    <input type="text" ng-model="form_DH.hsx" /> <br />
+    <br />
+    <button ng-click="addDongHo($event);">ADD</button>
+    <button ng-click="removeDongHo($event, $index);">DELETE</button>
+    <button ng-click="detailDongHo($event);">UPDATE</button>
+  </div>
+  <table border="1" class="table">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Mã SP</th>
+        <th>Giá SP</th>
+        <th>Hãng Sản Xuất</th>
+        <th>Function</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="dh in listDongHoall">
+      <tr>
+        <th>{{$index}}</th>
+        <th>{{dh.id}}</th>
+        <th>{{dh.name}}</th>
+        <th>{{dh.ma}}</th>
+        <th>{{dh.price}}</th>
+        <th>{{dh.hsx}}</th>
+        <th>
+          <a href="#" ng-click="detailDongHo($event, $index)"> Detail </a>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</section>
